@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f6">
+  <title>Untuk Olivia Pratiwi 💗</title>
+  <style>
+    :root {
+      --pink: #ef76a7;
+      --hot-pink: #d94783;
+      --deep: #8c315c;
+      --ink: #59394a;
+      --cream: #fffafd;
+      --soft: #fff0f6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: "Trebuchet MS", system-ui, -apple-system, sans-serif;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(255,255,255,.95) 0 4px, transparent 5px),
+        radial-gradient(circle at 88% 30%, rgba(255,255,255,.8) 0 5px, transparent 6px),
+        linear-gradient(145deg, #fff7fb 0%, #ffe8f1 52%, #fff4e8 100%);
+    }
+    .decor {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .5;
+      font-size: 26px;
+      animation: drift 7s ease-in-out infinite;
+    }
+    .d1 { top: 7%; left: 5%; } .d2 { top: 16%; right: 7%; animation-delay: -2s; }
+    .d3 { bottom: 14%; left: 7%; animation-delay: -4s; } .d4 { bottom: 8%; right: 6%; animation-delay: -1s; }
+    .wrap { position: relative; z-index: 1; width: min(100% - 28px, 720px); margin: 28px auto 42px; }
+    .card {
+      padding: clamp(23px, 6vw, 48px);
+      background: rgba(255,255,255,.87);
+      border: 1px solid rgba(217,71,131,.18);
+      border-radius: 30px;
+      box-shadow: 0 18px 60px rgba(155, 69, 109, .13);
+      text-align: center;
+      backdrop-filter: blur(9px);
+    }
+    .ribbon { display: inline-block; padding: 8px 14px; border-radius: 999px; background: #ffe5ef; color: var(--deep); font-size: .86rem; font-weight: 800; letter-spacing: .04em; }
+    .hero-cake { font-size: clamp(66px, 18vw, 100px); margin: 12px 0 0; filter: drop-shadow(0 8px 7px rgba(214,94,143,.14)); animation: bounce 2.4s ease-in-out infinite; }
+    h1 { color: var(--hot-pink); font-size: clamp(30px, 8vw, 51px); line-height: 1.08; margin: 12px 0; letter-spacing: -.04em; }
+    .subtitle { font-size: clamp(1rem, 3vw, 1.15rem); line-height: 1.8; max-width: 510px; margin: 14px auto 24px; }
+    .tiny-note { color: #a06b85; font-size: .88rem; margin-top: 18px; }
+    button {
+      font: inherit; font-weight: 800; cursor: pointer; border: 0;
+      border-radius: 999px; padding: 15px 24px; color: white;
+      background: linear-gradient(135deg, #f38bb4, #d94783);
+      box-shadow: 0 9px 22px rgba(217,71,131,.25);
+      transition: transform .2s, box-shadow .2s;
+    }
+    button:hover { transform: translateY(-2px); box-shadow: 0 13px 28px rgba(217,71,131,.3); }
+    button:focus-visible { outline: 3px solid var(--deep); outline-offset: 4px; }
+    .hidden { display: none !important; }
+    .letter { margin-top: 28px; text-align: left; animation: reveal .8s ease both; }
+    .letter-top { text-align: center; padding-bottom: 20px; border-bottom: 1px dashed #edb1ca; }
+    .letter-top .big-heart { font-size: 45px; }
+    h2 { color: var(--deep); font-size: clamp(23px, 6vw, 31px); line-height: 1.25; margin: 8px 0; text-align: center; }
+    .letter p { font-size: 1.02rem; line-height: 1.95; margin: 17px 0; }
+    .highlight {
+      background: linear-gradient(transparent 55%, #ffe0ec 55%);
+      font-weight: 800;
+      color: #9d3264;
+    }
+    .cute-box {
+      margin: 23px 0; padding: 20px; border-radius: 20px;
+      background: #fff1f7; border: 1px solid #ffe0eb;
+    }
+    .cute-box h3 { margin: 0 0 10px; text-align: center; color: #b53b70; font-size: 1.15rem; }
+    .cute-box p { margin: 0; text-align: center; }
+    .list { display: grid; gap: 10px; margin: 18px 0; }
+    .reason { display: flex; gap: 11px; align-items: flex-start; padding: 13px 15px; background: #fff9fc; border: 1px solid #f8dce8; border-radius: 15px; line-height: 1.7; }
+    .reason span { flex: 0 0 auto; }
+    .signature { text-align: right !important; color: var(--deep); font-weight: 800; }
+    .finale { text-align: center; margin-top: 25px; padding-top: 22px; border-top: 1px dashed #edb1ca; }
+    .finale .stars { font-size: 25px; letter-spacing: 5px; }
+    .footer { text-align: center; color: #a16e87; font-size: .82rem; margin: 19px 0 0; }
+    .floaty { position: fixed; bottom: -50px; z-index: 5; pointer-events: none; animation: float-up linear forwards; }
+    .confetti { position: fixed; top: -30px; z-index: 5; pointer-events: none; animation: fall linear forwards; }
+    @keyframes bounce { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+    @keyframes drift { 0%,100% { transform: translateY(0) rotate(-7deg); } 50% { transform: translateY(-13px) rotate(7deg); } }
+    @keyframes reveal { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float-up { to { transform: translateY(-115vh) rotate(35deg); opacity: 0; } }
+    @keyframes fall { to { transform: translateY(110vh) rotate(600deg); opacity: .2; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <span class="decor d1">💗</span><span class="decor d2">🌷</span>
+  <span class="decor d3">✨</span><span class="decor d4">🧸</span>
+
+  <main class="wrap">
+    <section class="card">
+      <span class="ribbon">PESAN RAHASIA KHUSUS UNTUK OLIPPP SAYANGNY GW...ETTT HEHE 💌</span>
+      <div class="hero-cake" aria-hidden="true">🎂</div>
+      <h1>Happy Birthday,<br> adek imuttt! 💖</h1>
+      <p class="subtitle">
+        Hari ini ada satu manusia yang wajib senyum lebih banyak dari biasanya...
+        dan sepertinya itu adek tula Hehe... 🥹🌷
+      </p>
+      <p class="subtitle">Ada pesan kecil dari seseorang yang sengaja menyiapkan halaman ini buat adek.</p>
+      <button id="openButton" type="button" aria-expanded="false" aria-controls="letter">Buka Pesan 💌</button>
+      <p class="tiny-note">Psst... bacanya sampai selesai, ya. Jangan curang langsung scroll bawah! 🤏😤</p>
+
+      <article id="letter" class="letter hidden" aria-live="polite">
+        <div class="letter-top">
+          <div class="big-heart">💗</div>
+          <h2>Untuk Olivia Pratiwi</h2>
+          <p style="text-align:center; margin-bottom:0;">Dari abangmu 'pikir sendiri  siapo', yang mau menyampaikan sesuatu di hari spesialmu. ✨</p>
+        </div>
+
+        <p>Hai, adekk cantekkk! 👋🏻💗</p>
+        <p>
+          <b>Selamat ulang tahun yaaaa!</b> 🥳🎂🎉
+          Hari ini adalah hari yang spesial, karena hari ini dunia pernah kedatangan seseorang yang sangat istimewa.
+          Jadi, sebelum kamu sibuk melakukan aktivitas seperti biasa, izinkan aku menyelipkan sedikit ucapan
+          dan doa buat addek hehe.
+        </p>
+
+        <p>
+          Semoga di umur yang baru ini, adek selalu diberi kesehatan, hati yang tenang, pikiran yang lebih ringan,
+          rezeki yang baik, dan kebahagiaan yang datang dari banyak arah. Semoga hal-hal yang selama ini adek
+          usahakan perlahan menemukan jalannya. Kalau ada mimpi yang masih adek simpan diam-diam, semoga suatu
+          hari nanti adek bisa melihatnya jadi nyata. Aamiin paling serius! 🤲🏻✨
+        </p>
+
+        <div class="cute-box">
+          <h3>Pengumuman penting 📢</h3>
+          <p>Mulai hari ini, adek resmi naik level! 🎮<br>
+          Level baru, pengalaman baru, cerita baru, dan semoga makin banyak alasan buat ketawa sampai lupa waktu. WKWK 😭💗</p>
+        </div>
+
+        <p>
+          abang juga berharap adek selalu dikelilingi orang-orang yang tulus. Orang-orang yang menghargai,
+          mendengarkan ceritamu, mendukung langkahmu, dan tetap ada bukan cuma saat semuanya menyenangkan.
+          adek pantas mendapatkan hal-hal baik. Jadi, jangan terlalu keras sama diri sendiri, ya.
+          Kalau suatu hari terasa capek, istirahat sebentar juga nggak apa-apa. Adek nggak harus menyelesaikan
+          semuanya dalam satu hari. Pelan-pelan juga tetap sebuah kemajuan. 🌷
+        </p>
+
+        <p>
+          Terus, semoga senyum adek hari ini lebih lebar dari biasanya. Semoga makanan yang adek makan enak,
+          kejutan yang adek dapat menyenangkan, dan notifikasi HP adek isinya ucapan baik semua—bukan tugas,
+          bukan tagihan, apalagi chat “nk bareng dk?” WKWKWK. 😭😂
+        </p>
+
+        <h2>Alasan adek harus bahagia hari ini 🌸</h2>
+        <div class="list">
+          <div class="reason"><span>🎂</span><div><b>Karena ini hari adek.</b><br>Hari untuk merayakan perjalananmu, semua hal yang sudah adek lewati, dan semua hal baik yang masih menunggu di depan.</div></div>
+          <div class="reason"><span>🧸</span><div><b>Karena adek juga boleh dimanjakan.</b><br>Nggak harus selalu kuat atau selalu produktif. Hari ini, semoga adek punya waktu buat melakukan hal-hal kecil yang bikin hati senang.</div></div>
+          <div class="reason"><span>🌈</span><div><b>Karena masih banyak cerita indah yang belum terjadi.</b><br>Semoga tahun ini membawa pertemuan baik, kesempatan baru, tawa yang tulus, dan kenangan yang nanti bikin adek tersenyum saat mengingatnya.</div></div>
+          <div class="reason"><span>💌</span><div><b>Karena ada orang yang ingin mendoakanmu.</b><br>Salah satunya aku, abangmu yng paling ganteng, yang hari ini ingin adek tahu bahwa aku berharap banyak hal baik datang ke hidup adek meskipun maaf banget abang belum bisa mengucapkan secara langsung di hari spesial adek .</div></div>
+        </div>
+
+        <p>
+          Olippp, abang nggak tahu apakah ucapan sederhana ini bisa bikin hari adek jadi sedikit lebih spesial,
+          tapi aku harap setidaknya adek tersenyum waktu membacanya. abang sengaja bikin pesan ini jadi sebuah
+          halaman kecil supaya adek punya kejutan yang beda dari ucapan biasa. Jadi kalau adek senyum sekarang,
+          misi pembuat website ini berhasil dong. Hehe. 😎💗
+        </p>
+
+        <p>
+          Terima kasih sudah menjadi Olippp yang punya cerita dan perjalananmu sendiri. Semoga adek makin
+          mengenal dirimu, makin berani mencoba hal baru, dan makin percaya bahwa adek bisa melewati banyak hal
+          dengan caramu sendiri. Jangan lupa merayakan pencapaian kecil juga, ya. Kadang hal sederhana yang
+          berhasil adekk lakukan hari ini pun layak untuk dibanggakan.
+        </p>
+
+        <div class="cute-box">
+          <h3>Doa kecil dari abang untuk adek 🤍</h3>
+          <p>
+            Semoga langkahmu dimudahkan, hatimu dijaga, orang-orang baik mendekat,
+            hal-hal yang bikin sedih perlahan mereda, dan kebahagiaan menemukan banyak jalan untuk sampai kepadamu.
+            Semoga adek selalu punya alasan untuk berharap dan seseorang untuk diajak berbagi tawa.
+            Aamiin. 🤲🏻🌷
+          </p>
+        </div>
+
+        <p>
+          Pokoknya, hari ini adek harus menikmati hari spesial adek ya!  ✨
+        </p>
+
+        <p>
+          Sekali lagi, <span class="highlight">selamat ulang tahun, Olippp!</span>
+          Semoga umur baru ini menjadi bab yang indah dalam hidupmu. Semoga adek sehat selalu, bahagia selalu,
+          makin dekat dengan impianmu, dan tetap punya ruang untuk hal-hal sederhana yang bikin adek merasa hidup ini menyenangkan.
+        </p>
+
+        <p>Jangan lupa senyum hari ini, ya. Kalau belum senyum juga, berarti abang harus nambahin satu lelucon lagi... tapi takut malah garing. WKWKWK 😭</p>
+
+        <p class="signature">Dengan doa dan ucapan paling hangat,<br>Ahmad Prayogi 💗</p>
+
+        <div class="finale">
+          <div class="stars">✨ 💗 🎂 💗 ✨</div>
+          <h2>Have the sweetest birthday!</h2>
+          <p style="text-align:center;">Semoga hari ini manis, tahun ini indah, dan hari-hari berikutnya membawa banyak kebaikan untukmu. 🌷</p>
+          <button id="againButton" type="button">Kasih Hati Lagi 💖</button>
+        </div>
+      </article>
+      <p class="footer">Dibuat dengan niat baik dan sedikit kegemasan oleh Ahmad Prayogiii ✨</p>
+    </section>
+  </main>
+
+  <script>
+    const openButton = document.getElementById("openButton");
+    const letter = document.getElementById("letter");
+    const againButton = document.getElementById("againButton");
+
+    openButton.addEventListener("click", () => {
+      letter.classList.toggle("hidden");
+      const opened = !letter.classList.contains("hidden");
+      openButton.textContent = opened ? "Pesan Sudah Terbuka 💗" : "Buka Pesan 💌";
+      openButton.setAttribute("aria-expanded", String(opened));
+      if (opened) {
+        celebrate();
+        setTimeout(() => letter.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    });
+
+    againButton.addEventListener("click", celebrate);
+
+    function celebrate() {
+      const hearts = ["💗", "💖", "💕", "💘", "✨", "🌷", "🎉"];
+      for (let i = 0; i < 28; i++) {
+        setTimeout(() => {
+          const item = document.createElement("span");
+          item.className = "floaty";
+          item.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+          item.style.left = Math.random() * 100 + "vw";
+          item.style.fontSize = (18 + Math.random() * 22) + "px";
+          item.style.animationDuration = (3 + Math.random() * 3) + "s";
+          document.body.appendChild(item);
+          item.addEventListener("animationend", () => item.remove());
+        }, i * 55);
+      }
+      for (let i = 0; i < 24; i++) {
+        const confetti = document.createElement("span");
+        confetti.className = "confetti";
+        confetti.textContent = ["🎊", "✨", "💗", "🌸"][Math.floor(Math.random() * 4)];
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.fontSize = (15 + Math.random() * 18) + "px";
+        confetti.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
+        document.body.appendChild(confetti);
+        confetti.addEventListener("animationend", () => confetti.remove());
+      }
+    }
+  </script>
+</body>
+</html>
